@@ -1,3 +1,4 @@
 
 model/DB.php
 fotos/*.jpeg
+common.php
