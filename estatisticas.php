@@ -26,8 +26,8 @@
                         
                         <option value="IG">Ingressos geral</option>
                         <option value="IT">Ingressos por turma</option>
-                        <option value="EG" disabled>Egressos Geral</option>
-                        <option value="ET" disabled>Egressos por turma</option>
+                        <option value="EG">Egressos Geral</option>
+                        <option value="ET">Egressos por turma</option>
                         <option value="RG" disabled>Retenção Geral (2023+)</option>
                         <option value="RT" disabled>Retenção por turma (2023+)</option>
                     </select>

@@ -11,10 +11,10 @@
             header("Location: relatorio_ingressos_turma.php");
             break;
         case "EG": //Egressos Geral
-
+			header("Location: relatorio_egressos_geral.php");
             break;
         case "ET": //Egressos por turma
-
+			header("Location: relatorio_egressos_turma.php");
             break;
         case "RG": //Retenção Geral (2023+)
 
