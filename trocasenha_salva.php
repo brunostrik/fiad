@@ -18,9 +18,9 @@
             $erro = "Sua senha é muito curta, por favor utilize 6 ou mais caracteres.";
         }else{
             //Descobre se é aluno ou professor
-            if (isset($_COOKIE["siape"])){
+            if (isset($_SESSION["siape"])){
                 //é prof
-                $siape = $_COOKIE["siape"];
+                $siape = $_SESSION["siape"];
                 //checa se a senha atual está correta
                 $prof = Professor::ChecaSenha($siape, $senhaAtual);
                 if(!$prof){
@@ -28,9 +28,9 @@
                 }else{
                     Professor::TrocaSenha($siape, $senhaMD5);
                 }
-            }else if (isset($_COOKIE["matricula"])){
+            }else if (isset($_SESSION["matricula"])){
                 //é aluno
-                $matricula = $_COOKIE["matricula"];
+                $matricula = $_SESSION["matricula"];
                 //checa se a senha atual está correta
                 $aluno = Aluno::ChecaSenha($matricula, $senhaAtual);
                 if(!$aluno){
@@ -50,9 +50,9 @@
 
 <body>
 <?php
-    if (isset($_COOKIE["matricula"])){
+    if (isset($_SESSION["matricula"])){
         include "navaluno.php";
-    }else if (isset($_COOKIE["siape"])){
+    }else if (isset($_SESSION["siape"])){
         include "nav.php";
     }
 ?>

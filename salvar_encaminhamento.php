@@ -21,7 +21,7 @@
         $enc->assunto = safe($_POST["txtMensagem"]);
         $enc->data = date("Y-m-d");
         $enc->resolvido = 0;
-        $enc->remetente = $_COOKIE["siape"];
+        $enc->remetente = $_SESSION["siape"];
 
         //Salva o encaminhamento
         $enc->Insert();

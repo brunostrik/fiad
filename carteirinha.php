@@ -1,5 +1,4 @@
 <?php
-    include "cookier.php";
     include "head.php";
 
     require_once "model/DB.php";

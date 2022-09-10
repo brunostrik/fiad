@@ -22,7 +22,7 @@
         $registro = new Registro();      
         $registro->id = 0;
         $registro->texto = safe($_POST["txtTexto"]);
-        $registro->professor = safe($_COOKIE["siape"]);
+        $registro->professor = safe($_SESSION["siape"]);
         $registro->aluno = safe($_POST["matricula"]);
         $registro->data = safe($_POST["txtData"]);
         $registro->sigiloso = safe($_POST["rbtSigiloso"]);

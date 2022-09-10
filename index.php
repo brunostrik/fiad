@@ -1,16 +1,17 @@
 <?php
+	session_start();
 	require_once "common.php"; //HELPER
 	require_once "model/Professor.php";
 	require_once "model/Aluno.php";
-
+	
 	$mostraErro = "hidden";
 
-	//ANALISA SE TEM COOKIE E CASO SIM ENCAMINHA PARA O MENU ADEQUADO
-	if (isset($_COOKIE["matricula"])){
+	//ANALISA SE TEM sessao E CASO SIM ENCAMINHA PARA O MENU ADEQUADO
+	if (isset($_SESSION["matricula"])){
 		//logado como estudante
 		header("Location: menualuno.php");
    		exit();
-	}else if (isset($_COOKIE["siape"])){
+	}else if (isset($_SESSION["siape"])){
 		//logado como professor
 		header("Location: menuprofessor.php");
    		exit();
@@ -31,7 +32,9 @@
 			if (!$aluno){//ACESSO NEGADO
 				$mostraErro = "";
 			}else{//ACESSO OK
-				setcookie("matricula",$aluno->matricula);
+				//setcookie("matricula",$aluno->matricula);
+				session_start();
+				$_SESSION["matricula"] = $aluno->matricula;
 				header("Location: menualuno.php");
    				exit();
 			}
@@ -40,7 +43,9 @@
 			if (!$prof){//ACESSO NEGADO
 				$mostraErro = "";
 			}else{//ACESSO OK
-				setcookie("siape",$prof->siape);
+				//setcookie("siape",$prof->siape);
+				session_start();
+				$_SESSION["siape"] = $prof->siape;
 				header("Location: menuprofessor.php");
    				exit();
 			}
@@ -82,7 +87,6 @@
                             </div>
                         </form>
                     </div>
-					<em>Este site utiliza cookies para funcionar corretamente. Ao utilizá-lo você concorda com o seu uso.</em>
                 </div>
             </div>
         </div>

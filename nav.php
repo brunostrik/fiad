@@ -16,7 +16,7 @@ require_once "model/Professor.php";
         </ul>
         <ul class="navbar-nav">
         <li class="nav-item">
-                <a class="nav-link"><?=Professor::Load($_COOKIE["siape"])->nome?></a> 
+                <a class="nav-link"><?=Professor::Load($_SESSION["siape"])->nome?></a> 
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="trocasenha.php">Trocar senha</a>

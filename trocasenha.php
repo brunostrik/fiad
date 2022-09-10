@@ -6,9 +6,9 @@
 ?>
 <body>
 <?php
-    if (isset($_COOKIE["matricula"])){
+    if (isset($_SESSION["matricula"])){
         include "navaluno.php";
-    }else if (isset($_COOKIE["siape"])){
+    }else if (isset($_SESSION["siape"])){
         include "nav.php";
     }
 ?>

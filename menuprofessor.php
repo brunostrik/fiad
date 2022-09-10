@@ -14,7 +14,7 @@
     include "onlyprofs.php";
 
     //Carrega o siape do professor que está logado
-    $siapeProfessor = $_COOKIE["siape"];
+    $siapeProfessor = $_SESSION["siape"];
 
     //Carrega os encaminhamentos pendentes recebidos
     $recebidos = Encaminhamento::SelectRecebidosDTO($siapeProfessor);

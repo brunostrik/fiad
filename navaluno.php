@@ -8,15 +8,15 @@ require_once "model/Aluno.php";
             <a class="nav-link" href="msgaluno.php">Enviar Mensagem</a>
           </li>   
           <li class="nav-item">
-            <a class="nav-link" href="carteirinha.php?mat=<?=$_COOKIE["matricula"]?>">Carteirinha</a>
+            <a class="nav-link" href="carteirinha.php?mat=<?=$_SESSION["matricula"]?>">Carteirinha</a>
           </li> 
           <li class="nav-item">
-            <a class="nav-link" href="perfil.php?mat=<?=$_COOKIE["matricula"]?>">Dados Pessoais</a>
+            <a class="nav-link" href="perfil.php?mat=<?=$_SESSION["matricula"]?>">Dados Pessoais</a>
           </li> 
         </ul>
         <ul class="navbar-nav">
         <li class="nav-item">
-                <a class="nav-link"><?=Aluno::Load($_COOKIE["matricula"])->nome?></a> 
+                <a class="nav-link"><?=Aluno::Load($_SESSION["matricula"])->nome?></a> 
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="trocasenha.php">Trocar senha</a>

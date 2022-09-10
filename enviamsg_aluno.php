@@ -16,7 +16,7 @@
         $destinatario = safe($_POST["destinatario"]);
         $mensagem = safe($_POST["msg"]);
 
-        $aluno = Aluno::Load($_COOKIE["matricula"]);
+        $aluno = Aluno::Load($_SESSION["matricula"]);
         $professor = Professor::Load($destinatario);
 
         $msg = new Mensagem();

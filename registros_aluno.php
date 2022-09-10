@@ -22,10 +22,10 @@
 
     $registros = null;
     //Analisa se é administrador (pode ver tudo) ou não (só pode ver o que não é sigiloso)
-    if(Professor::Load($_COOKIE["siape"])->admin == 1){
+    if(Professor::Load($_SESSION["siape"])->admin == 1){
         //carregar os registros sobre ele e mostrar: data, autor, texto (limitado) e se é sigiloso ou não. também mostrar botão para ver detalhes
         $registros = Registro::SelectByMatriculaAdmin($matricula);
-    }else if(Professor::Load($_COOKIE["siape"])->admin == 2){
+    }else if(Professor::Load($_SESSION["siape"])->admin == 2){
         //carregar os super sigilosos também
         $registros = Registro::SelectByMatriculaSuperAdmin($matricula);
     }else{

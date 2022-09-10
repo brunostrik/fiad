@@ -1,5 +1,5 @@
 <?php
-if (isset($_COOKIE["siape"])){
+if (isset($_SESSION["siape"])){
     //logado como professor
 }else{
     header('HTTP/1.0 403 Forbidden');

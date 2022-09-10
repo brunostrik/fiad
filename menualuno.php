@@ -3,7 +3,7 @@
     require_once "model/Aluno.php";
     require_once "model/Professor.php";
 	include "head.php";
-    $aluno = Aluno::Load($_COOKIE["matricula"]);
+    $aluno = Aluno::Load($_SESSION["matricula"]);
     $professores = Professor::SelectAll();
 ?>
 

@@ -1,5 +1,4 @@
 <?php
-    include "cookier.php";
     include "head.php";
 
     require_once "model/DB.php";
@@ -19,9 +18,9 @@
 ?>
 <body>
 <?php
-    if (isset($_COOKIE["matricula"])){
+    if (isset($_SESSION["matricula"])){
         include "navaluno.php";
-    }else if (isset($_COOKIE["siape"])){
+    }else if (isset($_SESSION["siape"])){
         include "nav.php";
     }
     

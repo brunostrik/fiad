@@ -1,7 +1,7 @@
 <?php
     include "cookier.php";
     include "head.php";
-
+    
     require_once "model/DB.php";
     require_once "model/Aluno.php";
     require_once "model/Registro.php";
@@ -19,7 +19,7 @@
     $registro = Registro::Load($idRegistro);
     $professor = Professor::Load($registro->professor);
     $aluno = Aluno::Load($registro->aluno);
-    $profLogado = Professor::Load($_COOKIE["siape"]);
+    $profLogado = Professor::Load($_SESSION["siape"]);
 	$categoria = Categoria::Load($registro->categoria);
 
     //Carregar os encaminhamentos do registro
